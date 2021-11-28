@@ -1,0 +1,172 @@
+@use "../utils/color.scss";
+
+.anchor {
+    position: absolute;
+    display: block;
+    opacity: 0;
+    color: black;
+    border-radius: 8px;
+    background-color: #DB8876;
+    font-size: 1.3rem;
+    font-weight: 600;
+    text-decoration: none;
+    padding: 8px 16px;
+    top: 5px;
+    left: calc(50% - 110px);
+    
+}
+
+.button {
+
+    cursor: pointer;
+
+    &--contact {
+        border-radius: 5px;
+        background-color: color.$primary-color;
+        color: #FFFFFF;
+        font-size: 16px;
+        font-weight: 700;
+        padding: 23px 20px;
+        max-height: 70px;
+        border: none;
+        margin-left: 100px;
+        cursor: pointer;
+
+        @media only screen and (max-width: 600px) {
+            position: fixed;
+            bottom: 30px;
+            left: calc(50% - 68px);
+            padding: 10px;
+        }   
+    }
+}
+
+.like-button {
+    border: none;
+    cursor: pointer;
+    color: color.$primary-color;
+    background: none;
+    font-size: 1.5rem;
+}
+
+.card {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 15px;
+    text-align: center;
+
+    &__link  {
+        text-decoration: none;
+    }
+    &__image {
+        border-radius: 50%;
+        height: 250px;
+        width: 250px;
+        overflow: hidden;
+        object-fit: cover;
+        margin: 15px auto;
+        
+        &--profile {
+            margin-right: 0;
+            @media only screen and (max-width: 600px) {
+                height: 133px;
+                width: 133px;
+            }
+        }
+    }
+    &__title {
+        color: color.$secondary-color;
+        font-size: 2rem;
+
+        &--profile {
+            font-size: 4rem;
+            @media only screen and (max-width: 600px) {
+                font-size: 2.25rem;
+            }
+        }
+        
+    }
+    &__location {
+        color: color.$primary-color;
+
+        &--profile {
+            font-size: 1.5rem;
+
+            @media only screen and (max-width: 600px) {
+                font-size: 0.75rem;
+            }
+        }
+        
+    }
+    &__price {
+        color : color.$text-color;
+        
+    }
+    &__tags {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    &--profile {
+        display: flex;
+        padding: 0 50px;
+        max-height: 300px;
+        position: relative;
+        margin-bottom: 50px;
+        @media only screen and (max-width: 600px) {
+            padding: 0 10px;
+        }
+
+        &__desc {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-size: 1.1rem;
+
+            @media only screen and (max-width: 600px) {
+                font-size: 0.75rem;
+            }
+        }
+    }
+}
+
+.dropdown {
+
+    background-color: color.$primary-color;
+    color: #FFFFFF;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 15px;
+    font-weight: 700;
+    font-size: 1rem;
+    border: none;
+
+    @media only screen and (max-width: 600px) {
+        display: none;
+    }
+}
+
+.filter {
+    border: 1px solid #bbb8b8;
+    color: color.$primary-color;
+    border-radius: 12px;
+    background-color: color.$text-background-color;
+    font-weight: 500;
+    padding: 3px 5px;
+    text-decoration: none;
+    margin: 5px 5px;
+
+    @media only screen and (max-width: 600px) {
+        font-size: 0.75rem;
+    }
+
+    &:hover{
+        background-color: color.$primary-color;
+        color: color.$text-background-color;
+    }
+    &:focus {
+        background-color: color.$primary-color;
+        color: color.$text-background-color;
+    }
+}
