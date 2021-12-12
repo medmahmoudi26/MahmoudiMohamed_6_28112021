@@ -43,7 +43,7 @@ function compareTitle(a, b) {
           if (a._title > b._title ){
             return 1;
           }
-          return 0;  
+          return 0;
 }
 function compareLike(a, b) {
 
@@ -53,7 +53,7 @@ function compareLike(a, b) {
       if (a._like < b._like ){
         return 1;
       }
-      return 0;  
+      return 0;
 }
 function compareDate(a, b) {
 
@@ -63,7 +63,7 @@ function compareDate(a, b) {
       if (a._date > b._date ){
         return 1;
       }
-      return 0;  
+      return 0;
 }
 //GALLERY RENDERING
 function renderGallery(){
@@ -76,7 +76,7 @@ function renderGallery(){
         media.render(gallery, index, photographInfo.name.split(" "));
         index++;
     }
-    lightboxClick(mediaList,folderName);    
+    lightboxClick(mediaList,folderName);
 }
 //count total like of media
 function likeTotal() {
@@ -90,20 +90,20 @@ function likeTotal() {
 function like() {
     let likeButtons = document.querySelectorAll(".like-button");
     for(let button of likeButtons) {
-        button.addEventListener( "click", () => { 
-            //select selectione le media(photo ou video) lié au bouton like           
+        button.addEventListener( "click", () => {
+            //select selectione le media(photo ou video) lié au bouton like
             let media = button.closest(".gallery__item").querySelector(".gallery__item__element");
             mediaList[media.id].liked();//incrementation du compte de like du media
             media.closest(".gallery__item").querySelector(".item-likeCount").innerHTML = mediaList[media.id]._like;//mise a jour du compteur de like
             likeTotal();//mise a jour du compteur de like total
-        });                                         
+        });
     }
 }
 
 function renderProfile() {
     //extract photographer first name  for the photo folder
     folderName = photographInfo.name.split(" ");
-        //extract photographer's tag and render them        
+        //extract photographer's tag and render them
         for(let tag of photographInfo.tags){
         photographtags += `<a class="filter" href="index.html#${tag}" aria-label="filtre ${tag}">#${tag}</a>`
         }
@@ -114,7 +114,7 @@ function renderProfile() {
                             <p class="card__location card__location--profile">${photographInfo.city},${photographInfo.country}</p>
                             <p class="card__bio">${photographInfo.tagline}</p>
                             <div class="card__tags" alt="Tag">${photographtags}</div>
-                            </div>            
+                            </div>
                             <button class="button--contact" alt="Contact Me">Contactez-moi</button>
                             <img src="/assets/images/Photographers ID Photos/${photographInfo.portrait}" alt="${photographInfo.name}" class="card__image card__image--profile"/>
                             ` );
@@ -124,11 +124,11 @@ function renderProfile() {
 }
 
 //DATA FETCHING
-fetch("/data.json")
+fetch("./data.json")
     .then(response => response.json())  //transforme la reponse en json
     .then(data => {
         //get photograph from json searching with id passed by url
-        photographInfo = data.photographers.find( element => element.id == (new URL(document.location)).searchParams.get('id')); // searchparams      
+        photographInfo = data.photographers.find( element => element.id == (new URL(document.location)).searchParams.get('id')); // searchparams
         for (let media of data.media){
             if( media.photographerId == (new URL(document.location)).searchParams.get('id') ){
                 mediaList.push(Factory(media)); // prepare gallery list
@@ -139,4 +139,3 @@ fetch("/data.json")
         likeTotal()
         like();
     })
-    
