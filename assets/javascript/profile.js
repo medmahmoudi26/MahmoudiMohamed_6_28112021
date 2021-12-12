@@ -116,7 +116,7 @@ function renderProfile() {
                             <div class="card__tags" alt="Tag">${photographtags}</div>
                             </div>
                             <button class="button--contact" alt="Contact Me">Contactez-moi</button>
-                            <img src="/assets/images/Photographers ID Photos/${photographInfo.portrait}" alt="${photographInfo.name}" class="card__image card__image--profile"/>
+                            <img src="./assets/images/Photographers ID Photos/${photographInfo.portrait}" alt="${photographInfo.name}" class="card__image card__image--profile"/>
                             ` );
         //set up event listener for the contact modal from modal.js
         modalSetUp();
