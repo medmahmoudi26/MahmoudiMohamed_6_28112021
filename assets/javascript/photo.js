@@ -23,7 +23,7 @@ export class Photo {
                     <div class="gallery__item">
                         <div class="gallery__item__element" id="${index}">
                             <a alt="${this._title},closeup view" href="#${index}" class="gallery__lightbox-link">
-                                <img src="/assets/images/${folderName[0]}/${this._image}" class="gallery__item__image" alt-text ="${this._alt}" />
+                                <img src="./assets/images/${folderName[0]}/${this._image}" class="gallery__item__image" alt-text ="${this._alt}" />
                             </a>                            
                         </div>
                         <div class="gallery__item__details">
