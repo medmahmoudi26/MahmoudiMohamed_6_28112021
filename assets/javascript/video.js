@@ -13,10 +13,11 @@ export class Video {
         this._alt = alt;
     }
 
-
+    // like function
     liked() {
         this._like += 1;
     }
+    // inserting the dom content
     render(parent, index, folderName) {
                 parent.insertAdjacentHTML("beforeend",`
                         <div class="gallery__item">
@@ -37,7 +38,8 @@ export class Video {
                         </div>
                 `);
     }
-    renderLightbox(folderName){        
+    // adding the lightbox line with the link to the video 
+    renderLightbox(folderName){         
         
                 return `<video controls class="lightbox__video"><source src="./assets/images/${folderName[0]}/${this._video}" alt="${this._title}"></source></video><p class="lightbox__title">${this._title}</p>`;            
     }

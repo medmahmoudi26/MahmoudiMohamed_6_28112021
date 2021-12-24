@@ -13,11 +13,11 @@ export class Photo {
         this._alt = alt;
     }
 
+    // like function
     liked() {
         this._like += 1;
-        //rerender like count
     }
-
+    // render the image elements
     render(parent, index, folderName) {       
             parent.insertAdjacentHTML("beforeend",`
                     <div class="gallery__item">
@@ -35,6 +35,7 @@ export class Photo {
                     </div>`);
 
     }
+    // render the lightbox element
     renderLightbox(folderName){          
                 return `<img src="./assets/images/${folderName[0]}/${this._image}" class="lightbox__image" alt="${this._title}"/><p class="lightbox__title">${this._title}</p>`;             
     }
