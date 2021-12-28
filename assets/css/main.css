@@ -204,7 +204,7 @@ body {
   .button--contact {
     position: fixed;
     bottom: 30px;
-    left: calc(50% - 68px);
+    left: calc(50% - 150px);
     padding: 10px;
   }
 }
@@ -311,6 +311,12 @@ body {
 }
 @media only screen and (max-width: 600px) {
   .dropdown {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .trier-par {
     display: none;
   }
 }
